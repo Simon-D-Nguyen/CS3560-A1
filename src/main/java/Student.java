@@ -12,11 +12,6 @@ public class Student {
     }
 
 
-    public void vote(Question question) {
-        //TODO
-    }
-
-
     @Override
     public String toString() {
         return "ID: " + id;
