@@ -1,22 +1,9 @@
-import java.util.HashMap;
+import java.util.Collection;
 
-public abstract class Question {
-    private HashMap<Character, String> options;
-    private String question;
+public interface Question {
 
-
-    public Question(String question) {
-        this.options = new HashMap<>();
-        this.question = question;
-    }
-
-
-    public String getQuestion() {
-        return question;
-    }
-
-
-    public void addOption(Character option, String description){
-        options.put(option, description);
-    }
+    public String getQuestion();
+    public void addOption(Character option, String description);
+    public Collection<Character> getOptions();
+    public boolean isMultiAnswer();
 }
