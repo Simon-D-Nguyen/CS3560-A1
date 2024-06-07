@@ -1,13 +1,22 @@
 import java.util.HashMap;
 
 public abstract class Question {
-    private HashMap<Character, String> questions;
+    private HashMap<Character, String> options;
+    private String question;
 
 
+    public Question(String question) {
+        this.options = new HashMap<>();
+        this.question = question;
+    }
 
-    public void addQuestion(Character option, String description){
-        questions.put(option, description);
+
+    public String getQuestion() {
+        return question;
+    }
 
 
+    public void addOption(Character option, String description){
+        options.put(option, description);
     }
 }
