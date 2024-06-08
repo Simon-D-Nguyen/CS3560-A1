@@ -75,4 +75,19 @@ public abstract class DiscreteAnswerQuestion implements Question{
     public boolean isValidAnswerSet(Set<Character> answerSet) {
         return validAnswerSetSize(answerSet) && validAnswerSetEntries(answerSet);
     }
+
+
+    /**
+     * Added a toString method to make printing/checking easier.
+     * @return string representation of the question.
+     */
+    @Override
+    public String toString() {
+        String answerOptions = new String();
+        for(Character c : answers.keySet()) {
+            answerOptions = answerOptions + System.lineSeparator() + c + ": " + answers.get(c);
+        }
+
+        return question + answerOptions;
+    }
 }
