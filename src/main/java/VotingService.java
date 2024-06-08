@@ -4,13 +4,12 @@ import java.util.Map;
 
 public class VotingService {
     private Question question;
-    private Collection<Character> options;
-    private HashMap<Student, Collection<Character>> studentAnswers;
+    private final HashMap<Student, Collection<Character>> studentAnswers;
     private HashMap<Character, Integer> answerStats;
 
 
     private void setOptions() {
-        this.options = question.getOptions();
+        Collection<Character> options = question.getOptions();
     }
 
 
@@ -38,6 +37,7 @@ public class VotingService {
 
     public VotingService() {
         studentAnswers = new HashMap<>();
+        answerStats = new HashMap<>();
     }
 
 
