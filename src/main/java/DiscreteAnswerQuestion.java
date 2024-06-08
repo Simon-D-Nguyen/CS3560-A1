@@ -62,6 +62,9 @@ public abstract class DiscreteAnswerQuestion implements Question{
 
     /**
      * Returns the max answers in order to answer the question
+     * Utilized in order to differ between different Question Types
+     * (Multiple vs. Single vs. New ones) by overriding output.
+     *
      * @return an int value of the max values
      */
     public int getMaxAnswers() {
