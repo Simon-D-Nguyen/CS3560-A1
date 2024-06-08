@@ -3,12 +3,12 @@ import java.util.*;
 public class SimulationDriver {
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
 
         Random random = new Random();
 
         // Create Question
-        Question q1 = new SingleChoiceDiscreteAnswerQuestion("Water is wet?");
+        System.out.println("--- Single-Choice Question ---");
+        Question q1 = new SingleChoiceQuestion("Water is wet?");
         q1.addOption('1', "True");
         q1.addOption('2', "False");
 
@@ -19,11 +19,10 @@ public class SimulationDriver {
 
 
         //Create Student IDs
-        Student[] students = new Student[10];
+        Student[] students = new Student[20];
         for(int i = 0;  i < students.length; i++) {
             students[i] = new Student(random.nextInt(1000));
         }
-
 
         //Create Student Answers
         List<Character> options = iVote.getOptions().stream().toList();
@@ -34,14 +33,16 @@ public class SimulationDriver {
             studentAnswers[i] = options.get(choice);
         }
 
-
         //Submit answers
         for (int i = 0;  i < studentAnswers.length; i++) {
-            iVote.submitAnswer(students[i], Arrays.asList(studentAnswers[i]));
+            iVote.submitAnswer(students[i], new HashSet<>(Arrays.asList(studentAnswers[i])));
         }
-
 
         //Voting service output
         iVote.outputStatistics();
+
+
+
+
     }
 }
