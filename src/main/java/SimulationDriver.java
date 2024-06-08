@@ -40,9 +40,18 @@ public class SimulationDriver {
 
         //Voting service output
         iVote.outputStatistics();
+        iVote.outputStudentAnswers();
 
 
 
+
+        // Create Question
+        System.out.println("--- Single-Choice Question ---");
+        Question q2 = new SingleChoiceQuestion("Water is wet?");
+        q2.addOption('1', "True");
+        q2.addOption('2', "False");
+
+        iVote.setQuestion(q2);
 
     }
 }

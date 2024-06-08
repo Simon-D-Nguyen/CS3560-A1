@@ -101,11 +101,24 @@ public class VotingService {
             System.out.println("N/A");
         }
 
-        System.out.println(question.getQuestion());
-        System.out.println("Statistics:");
+        System.out.println(question);
+        System.out.println("-> Statistics:");
         for(Map.Entry<Character, Integer> entry: answerStats.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
         System.out.println();
     }
+
+
+    /**
+     * Outputs Each student's stored answer to the question.
+     */
+    public void outputStudentAnswers() {
+        System.out.println("-> Student Answers:");
+        for(Student student: studentAnswers.keySet()){
+            System.out.println(student +": " + studentAnswers.get(student));
+        }
+        System.out.println();
+    }
+
 }
