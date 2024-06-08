@@ -53,11 +53,14 @@ public class VotingService {
 
 
     /**
-     * Sets the question for the voting service
+     * Sets the question for the voting service, resetting the service's
+     * the options and stats
      * @param question Holds the question and valid answers
      */
     public void setQuestion(Question question) {
         this.question = question;
+        answerStats.clear();
+        studentAnswers.clear();
     }
 
 
