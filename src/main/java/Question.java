@@ -33,5 +33,5 @@ public interface Question {
      * Describes if an answer-set is valid
      * @return a boolean value representing if the answer is valid
      */
-    public boolean isValidAnswer(Set<Character> answers);
+    public boolean isValidAnswerSet(Set<Character> answerSet);
 }
